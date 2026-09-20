@@ -1,7 +1,7 @@
 # Active Context
 
 ## Current Focus
-**The site is live at https://tahagalata.com** (2026-09-20), HTTPS enforced, served by GitHub Pages. The build-and-launch phase is done. Remaining work is polish and verification, not construction.
+**The site is live at https://tahagalata.com** (2026-09-20), HTTPS enforced, served by GitHub Pages. The build-and-launch phase is done; the LinkedIn preview renders sharp as of `641b79b`. Remaining work is polish and verification, not construction.
 
 ## Settled Decisions (all confirmed by the user, 2026-09-20)
 - **Stack:** Next.js + TypeScript + Tailwind, static export → GitHub Pages at the `tahagalata.com` apex.
@@ -12,9 +12,8 @@
 - **Visual direction:** lineage / dataflow graph. Tokens and rules in `designContext.md`.
 
 ## Next Steps
-1. Re-run LinkedIn's Post Inspector after the latest push — the 2x social card needs a forced re-scrape to replace the cached blurry one.
-2. Keyboard and screen-reader pass on real hardware (never done; only static screenshots so far).
-3. Optional: replace the NovaDSA logo if a clean vector becomes available (current one is an auto-trace).
+1. Keyboard and screen-reader pass on real hardware (never done; only static screenshots so far).
+2. Optional: replace the NovaDSA logo if a clean vector becomes available (current one is an auto-trace).
 
 ## Patterns & Preferences
 - **The user has a sharp eye and reverses course when something is wrong** — grayscale photo reverted, "Where the current work came from" simplified to "Experience", capabilities section replaced a paragraph. Propose, show, and expect revision; don't defend a choice past one round.

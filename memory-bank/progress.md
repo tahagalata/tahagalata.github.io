@@ -8,11 +8,10 @@
 - Left rail (identity, education, languages, clients) + main column (capabilities, toolkit, experience lineage graph) + full-width footer.
 - Light and dark schemes and 390px mobile, all verified by screenshot.
 - Brand marks for SAP, AWS, Python and friends, plus NovaDSA, NTT DATA and BSH, all monochrome and scheme-aware.
-- SEO and sharing: canonical URL, `robots.txt`, `sitemap.xml`, TG favicon, apple touch icon, 2400x1260 Open Graph card.
+- SEO and sharing: canonical URL, `robots.txt`, `sitemap.xml`, TG favicon, apple touch icon, 1200x630 Open Graph card (`og-v3.png`) confirmed sharp in LinkedIn's Post Inspector.
 - Deploy: push `main` → Action → Pages.
 
 ## What's Left
-- [ ] Force a LinkedIn re-scrape so the cached blurry social card is replaced
 - [ ] Keyboard and screen-reader pass on real hardware
 - [ ] Optional: a clean NovaDSA vector to replace the auto-trace
 
