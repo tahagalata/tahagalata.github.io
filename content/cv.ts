@@ -91,7 +91,7 @@ export const roles: Role[] = [
 export const trajectory = {
   from: "SAP ecosystem",
   to: "AWS data engineering",
-  note: "Enterprise data lake on AWS SageMaker, built on a decade-old SAP reporting estate.",
+  note: "Enterprise data lake on AWS SageMaker.",
 };
 
 /**
@@ -116,7 +116,7 @@ export const capabilities = [
   {
     glyph: "migrate" as const,
     title: "SAP BW/4HANA migration",
-    detail: "End to end, through user acceptance testing and go-live.",
+    detail: "End to end. Development, user acceptance testing and go-live.",
   },
   {
     glyph: "lake" as const,
