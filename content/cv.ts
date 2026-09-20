@@ -152,13 +152,13 @@ export const toolkit = [
   {
     group: "AWS",
     mark: "aws",
-    blurb: "Data lake and analytics services, currently in production use.",
+    blurb: "Efficient data lakehouse architectures for analytics and AI/ML workflows.",
     items: ["SageMaker", "Redshift", "QuickSight", "Glue", "Athena", "S3"],
   },
   {
     group: "Data & code",
     mark: "python",
-    blurb: "Querying, transformation and analysis across both worlds.",
+    blurb: "Distributed, large-scale data processing and analysis.",
     items: ["SQL", "Python", "pandas", "NumPy", "PySpark"],
   },
 ];
