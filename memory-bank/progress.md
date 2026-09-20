@@ -10,17 +10,16 @@ Site built and building clean as a static export (2026-09-20). Not yet deployed 
 - Light and dark schemes both verified by screenshot; mobile (390px) verified.
 - Deploy workflow at `.github/workflows/deploy.yml`.
 - Custom domain wired: `public/CNAME`, canonical + OG URL, `robots.txt`, `sitemap.xml` all emit `tahagalata.com`.
+- Favicon, apple touch icon and a 1200x630 Open Graph card, all verified in the export.
 
 ## What's Left
 - [ ] Create the GitHub repo (`tahagalata.github.io`) and push; enable Pages with Source: GitHub Actions
 - [ ] Configure `tahagalata.com` DNS, set the custom domain in repo settings, enforce HTTPS
-- [ ] Favicon and an Open Graph image
 - [ ] Keyboard + screen-reader pass on real hardware
 - [ ] Verify the deployed site once live
 
 ## Known Issues
 - No GitHub remote yet, so nothing is deployed; `tahagalata.com` DNS not configured.
-- No favicon or OG image; link previews will be bare.
 - Photo is 431x442 — fine at its current size, too small for a large portrait.
 - `pdftotext`/`pdftoppm` unavailable locally; `pypdf` (pip, user env) was used instead. Re-extraction isn't needed — use `cvContent.md`.
 
