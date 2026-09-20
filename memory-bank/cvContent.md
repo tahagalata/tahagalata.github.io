@@ -8,7 +8,7 @@ Source of truth for all site copy. Do not paraphrase into the site without check
 
 ## Contact
 - Phone: on the PDF only — never published
-- Email: the personal gmail on the CV
+- Email: the personal gmail on the CV  — **superseded for the site**, see Content Rules
 - LinkedIn: @tahagalata — https://linkedin.com/in/tahagalata (confirmed)
 
 ## Summary
@@ -57,5 +57,6 @@ August 2020 – October 2020
 
 ## Content Rules (confirmed 2026-09-20)
 - **Phone number must NOT appear on the site.** Contact = email + LinkedIn.
+- **Site email is `contact@tahagalata.com`**, not the `the personal gmail on the CV` on the CV (set 2026-09-20). This is the one place the site deliberately departs from the PDF.
 - **Photo is included.** `public/photo.png`, 431x442 portrait.
 - **No PDF anywhere.** `CV Resume.pdf` is a local content source only: not in `public/`, not linked, and git-ignored so it never reaches the repo either (it carries the phone number, and a public repo would publish it). This file is the durable copy of its content.

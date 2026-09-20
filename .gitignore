@@ -5,7 +5,3 @@ next-env.d.ts
 *.tsbuildinfo
 .DS_Store
 .env*
-
-# Local content source only. Contains the phone number, which is deliberately
-# not published; see memory-bank/cvContent.md.
-CV Resume.pdf
