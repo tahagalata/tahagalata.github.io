@@ -15,13 +15,10 @@ export function Experience() {
         id="experience-heading"
         className="text-xl font-medium tracking-tight sm:text-2xl"
       >
-        Where the current work came from
+        Experience
       </h2>
-      <p className="mt-2 max-w-[62ch] text-sm leading-relaxed text-muted">
-        Read downward to trace it back. Each arrow points into the role it fed.
-      </p>
 
-      <ol className="mt-10">
+      <ol className="mt-8">
         <li aria-hidden="true" className="mb-4 grid grid-cols-[24px_1fr] gap-x-4 sm:gap-x-6">
           <div className="flex justify-center">
             <Edge accent delay={edgeCount * 160 + 120} height={56} />

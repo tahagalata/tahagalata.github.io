@@ -3,7 +3,7 @@
 Direction chosen 2026-09-20: **Lineage — dataflow graph**.
 
 ## Core Concept
-The experience section is a **provenance trace**, not a timeline. Present role sits at the top; edges point *upward* into it from the roles that fed it. This is how a data lineage graph is actually read — you start at the number you care about and trace where it came from — and it happens to match what a recruiter wants (current work first). The concept is the layout; it is not decoration applied to a generic timeline.
+The experience section is a **provenance trace**, not a timeline. The heading is plainly "Experience" (user's call, 2026-09-20) and the line explaining how to read the arrows was removed — the concept now has to carry itself, which it does via the dates. Present role sits at the top; edges point *upward* into it from the roles that fed it. This is how a data lineage graph is actually read — you start at the number you care about and trace where it came from — and it happens to match what a recruiter wants (current work first). The concept is the layout; it is not decoration applied to a generic timeline.
 
 Rules that keep it honest:
 - Edge labels carry what actually propagated forward (e.g. BSH → NTT DATA: "BW/4HANA migration"). Never invent a link that isn't in the CV.
