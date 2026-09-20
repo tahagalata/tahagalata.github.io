@@ -33,6 +33,7 @@ Layout (revised 2026-09-20 after user feedback: too text-heavy, skills buried, d
 - **Left rail** (user's requested order): identity, contact, then Education, Languages, Delivered for. **Main column**: summary, toolkit, experience graph. Footer spans the full width below both.
 - Grid rows are `[auto_1fr]` with the aside `self-start`; without that, main spanning both rows stretches row 1 and strands the aside far below the identity block.
 - DOM order is identity → main → aside, so mobile stacking keeps the summary and experience ahead of education and languages. The footer lives at page level for the same reason — inside `main` it landed mid-page on mobile.
+- Toolkit items are **bounded tags** (hairline border, 2px radius), not space-separated text: several items contain spaces of their own ("SAP Analytics Cloud", "Native HANA views"), so whitespace alone read as one running sentence.
 - **Toolkit sits directly under the summary**, not at the bottom: three panels (SAP / AWS / Data & code), each a brand mark, a one-line blurb and its tools. It is the fastest answer to "what does he use?".
 - Clients render as a typographic list ("Delivered for") in the rail, chosen over logos: no borrowed marks, no implied endorsement.
 - Nodes are rectangular with a 2px radius — near-square, drafting-like, not the SaaS rounded card.

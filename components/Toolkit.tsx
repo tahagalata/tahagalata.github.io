@@ -31,9 +31,12 @@ export function Toolkit() {
               {group.blurb}
             </p>
 
-            <ul className="mt-4 flex flex-wrap gap-x-3 gap-y-1.5">
+            <ul className="mt-4 flex flex-wrap gap-1.5">
               {group.items.map((item) => (
-                <li key={item} className="mono text-xs text-muted">
+                <li
+                  key={item}
+                  className="mono rounded-[2px] border border-hairline px-2 py-1 text-xs leading-none text-muted"
+                >
                   {item}
                 </li>
               ))}
