@@ -5,7 +5,7 @@ Site is built (2026-09-20) and builds clean as a static export. Next move is cre
 
 ## Recent Changes
 - **Redesign after user feedback** (too text-heavy, skills buried at the bottom, desktop side gutters too wide): widened to a two-column layout with a sticky identity rail, moved the toolkit to the top with brand marks, added a "Delivered for" wordmark strip.
-- Awaiting an `aws.svg` from the user; AWS renders as a monogram tile until then.
+- AWS mark supplied by the user and in place; all toolkit panels now carry a real mark.
 - Scaffolded Next.js 16 / React 19 / Tailwind 4, wrote all sections, verified light + dark + mobile by screenshot.
 - `CV Resume.pdf` git-ignored: a public repo would have published the phone number the site deliberately omits.
 

@@ -44,9 +44,11 @@ Cream/terracotta palette; all-caps tracked eyebrow labels; `A · B · C` middle-
 ## Brand Marks
 - Tool marks are inline single-path SVGs in `content/marks.ts`, rendered monochrome in `currentColor` so they sit in the palette instead of fighting it.
 - Held: SAP, Python, pandas, NumPy, Apache Spark, Figma, Webflow, React (from simple-icons; CC0 data, marks remain their owners' trademarks, used nominatively).
-- **Not obtainable openly: AWS and all AWS service icons** (Amazon had them removed), plus NTT DATA, NovaDSA, OPET, Vakko, Villeroy & Boch, Eczacıbaşı. SQL has no mark by nature.
-- A tool with no mark falls back to a **monogram tile** of the same size and weight, so the grid never looks half-finished. AWS is on that fallback until the user supplies `aws.svg`.
-- Decision: one AWS mark, not seven service icons — seven would out-weigh SAP and make the grid noisy.
+- **AWS supplied by the user** (official 3-path logo, native 304x182 viewBox), rendered monochrome like the rest. One AWS mark, not seven service icons — seven would out-weigh SAP and make the grid noisy.
+- Still not obtainable: NTT DATA, NovaDSA, OPET, Vakko, Villeroy & Boch, Eczacıbaşı. Not needed — clients are a wordmark strip. SQL has no mark by nature and uses the monogram fallback.
+- A tool with no mark falls back to a **monogram tile** of the same weight, so the grid never looks half-finished.
+- Marks carry a per-mark `height`, because a mark filling its square reads heavier than a wide, short one at the same box size (SAP `h-10`, AWS `h-6`, symbols `h-7`).
+- `wordmark: true` marks (SAP, AWS) spell the name themselves, so their text heading is `sr-only` — the logo *is* the heading. "aws AWS" side by side read as a mistake.
 
 ## Resolved in-browser
 - Photo sits beside the name in the hero as a square node (2px radius, hairline border), matching the graph's node language; 96px mobile / 112px desktop, the limit its resolution supports.

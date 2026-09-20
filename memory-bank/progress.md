@@ -14,7 +14,6 @@ Site built and building clean as a static export (2026-09-20). Not yet deployed 
 ## What's Left
 - [ ] Create the GitHub repo (`tahagalata.github.io`) and push; enable Pages with Source: GitHub Actions
 - [ ] Configure `tahagalata.com` DNS, set the custom domain in repo settings, enforce HTTPS
-- [ ] Drop in `aws.svg` (user is supplying) and add its path to `content/marks.ts`
 - [ ] Favicon and an Open Graph image
 - [ ] Keyboard + screen-reader pass on real hardware
 - [ ] Verify the deployed site once live
