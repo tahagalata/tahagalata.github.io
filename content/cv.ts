@@ -29,6 +29,8 @@ export type Role = {
   carried?: string[];
   /** True when this role is not part of the data lineage above it. */
   detached?: boolean;
+  /** Slug in content/marks.ts for the employer's logo. */
+  mark?: string;
 };
 
 /** Ordered newest first: the graph is read top-down, edges point upward. */
@@ -37,6 +39,7 @@ export const roles: Role[] = [
     id: "novadsa",
     role: "Data Analytics Consultant",
     org: "NovaDSA",
+    mark: "novadsa",
     start: "September 2024",
     end: "Present",
     current: true,
@@ -50,6 +53,7 @@ export const roles: Role[] = [
     id: "ntt_data",
     role: "SAP BW Consultant",
     org: "NTT DATA Business Solutions",
+    mark: "nttdata",
     orgNote: "BSH Data Analytics",
     start: "July 2023",
     end: "August 2024",
@@ -65,7 +69,7 @@ export const roles: Role[] = [
     id: "bsh",
     role: "Data Analytics Project Student",
     org: "Bosch & Siemens Home Appliances",
-    orgNote: "BSH",
+    mark: "bsh",
     start: "March 2022",
     end: "June 2023",
     carried: ["Supply chain reporting", "BW/4HANA migration"],

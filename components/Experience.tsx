@@ -1,5 +1,6 @@
 import { roles, trajectory } from "@/content/cv";
 import { Edge } from "./Edge";
+import { Mark, markTitle } from "./Mark";
 
 /**
  * Experience as a provenance trace: current role at the top, edges pointing up
@@ -55,12 +56,27 @@ export function Experience() {
                     <h3 className="text-base font-medium tracking-tight sm:text-lg">
                       {role.role}
                     </h3>
-                    <p className="mt-0.5 text-sm text-muted">
-                      {role.org}
-                      {role.orgNote ? (
-                        <span className="text-edge"> / {role.orgNote}</span>
+                    <div className="mt-1.5 flex flex-wrap items-center gap-x-2.5 gap-y-1">
+                      {role.mark ? (
+                        <span className="text-ink">
+                          <Mark slug={role.mark} name={role.org} />
+                        </span>
                       ) : null}
-                    </p>
+                      <p
+                        className={
+                          // The logo already spells the org out; repeating it
+                          // verbatim beside the mark reads as a mistake.
+                          markTitle(role.mark) === role.org && !role.orgNote
+                            ? "sr-only"
+                            : "text-sm text-muted"
+                        }
+                      >
+                        {role.org}
+                        {role.orgNote ? (
+                          <span className="text-edge"> / {role.orgNote}</span>
+                        ) : null}
+                      </p>
+                    </div>
                   </div>
                   <p className="mono mt-2 shrink-0 text-xs text-muted sm:mt-0">
                     <time>{role.start}</time>

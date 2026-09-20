@@ -1,14 +1,27 @@
 import { marks } from "@/content/marks";
 
-/**
- * A tool's brand mark, monochrome in currentColor. Falls back to a monogram so
- * a tool whose mark we cannot legitimately obtain still gets a uniform tile.
- */
 export function isWordmark(slug?: string) {
   return Boolean(slug && marks[slug]?.wordmark);
 }
 
-export function Mark({ slug, name }: { slug?: string; name: string }) {
+export function markTitle(slug?: string) {
+  return slug ? marks[slug]?.title : undefined;
+}
+
+/**
+ * A brand mark, drawn in currentColor. Paths toned "surface" paint in the card
+ * background instead, so baked-in letter counters follow the colour scheme.
+ * Falls back to a monogram when no mark is held, keeping grids uniform.
+ */
+export function Mark({
+  slug,
+  name,
+  height,
+}: {
+  slug?: string;
+  name: string;
+  height?: string;
+}) {
   const mark = slug ? marks[slug] : undefined;
 
   if (!mark) {
@@ -26,12 +39,18 @@ export function Mark({ slug, name }: { slug?: string; name: string }) {
   return (
     <svg
       viewBox={mark.viewBox}
-      className={`${mark.height} w-auto fill-current`}
+      className={`${height ?? mark.height} w-auto`}
       aria-hidden="true"
       role="presentation"
     >
-      {mark.paths.map((d) => (
-        <path key={d.slice(0, 24)} d={d} />
+      {mark.paths.map((p, i) => (
+        <path
+          key={i}
+          d={p.d}
+          transform={p.transform}
+          fillRule={p.fillRule}
+          fill={p.tone === "surface" ? "var(--c-surface)" : "currentColor"}
+        />
       ))}
     </svg>
   );
