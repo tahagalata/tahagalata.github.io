@@ -56,6 +56,7 @@ August 2020 – October 2020
 - Spanish — Beginner
 
 ## Content Rules (confirmed 2026-09-20)
+- The CV's full summary paragraph is **not** shown on the site; it was compressed into the lede and four capability points in `content/cv.ts`. This file remains the record of the original wording.
 - **Phone number must NOT appear on the site.** Contact = email + LinkedIn.
 - **Site email is `contact@tahagalata.com`**, not the `the personal gmail on the CV` on the CV (set 2026-09-20). This is the one place the site deliberately departs from the PDF. Mailbox confirmed live by the user — don't re-raise it.
 - **Photo is included.** `public/photo.png`, 431x442 portrait.

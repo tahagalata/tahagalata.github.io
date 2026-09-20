@@ -6,7 +6,7 @@ Site built and building clean as a static export (2026-09-20). Not yet deployed 
 ## What Works
 - CV content extracted to `cvContent.md`; all content questions resolved.
 - Next.js 16 + React 19 + Tailwind 4 scaffold, `output: "export"`, typechecks and builds clean.
-- Full page: left rail (identity, education, languages, clients) + main column (summary, toolkit with brand marks, lineage graph), full-width footer.
+- Full page: left rail (identity, education, languages, clients) + main column (capabilities, toolkit with brand marks, lineage graph), full-width footer.
 - Light and dark schemes both verified by screenshot; mobile (390px) verified.
 - Deploy workflow at `.github/workflows/deploy.yml`.
 - Custom domain wired: `public/CNAME`, canonical + OG URL, `robots.txt`, `sitemap.xml` all emit `tahagalata.com`.

@@ -95,6 +95,40 @@ export const trajectory = {
 };
 
 /**
+ * What he does, as against what he uses (that is `toolkit`). Every point is a
+ * compression of the CV summary and the work-experience bullets — nothing here
+ * claims anything the CV does not.
+ */
+export const lede =
+  "Designing ETL pipelines, data models and reporting for financial and supply chain processes — across the SAP ecosystem and AWS.";
+
+export const capabilities = [
+  {
+    glyph: "model" as const,
+    title: "Data models & ETL",
+    detail: "Complex models and pipelines for finance and supply chain.",
+  },
+  {
+    glyph: "report" as const,
+    title: "Financial & BI reporting",
+    detail: "Consolidated reporting for large-scale enterprise clients.",
+  },
+  {
+    glyph: "migrate" as const,
+    title: "SAP BW/4HANA migration",
+    detail: "End to end, through user acceptance testing and go-live.",
+  },
+  {
+    glyph: "lake" as const,
+    title: "Cloud data engineering",
+    detail: "Enterprise data lakes on AWS, feeding AI/ML workflows.",
+  },
+];
+
+/** Countries named in the work-experience bullets. */
+export const reach = ["Türkiye", "Germany", "Spain", "China", "Russia"];
+
+/**
  * Platforms and tools. `mark` is a slug in content/marks.ts; a group or item
  * without one renders as a monogram tile, so the grid stays uniform.
  */

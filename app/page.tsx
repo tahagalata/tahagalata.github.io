@@ -1,4 +1,5 @@
 import { Identity } from "@/components/Identity";
+import { Capabilities } from "@/components/Capabilities";
 import { Toolkit } from "@/components/Toolkit";
 import { Experience } from "@/components/Experience";
 import { SideSections } from "@/components/SideSections";
@@ -18,10 +19,7 @@ export default function Home() {
         </div>
 
         <main className="mt-12 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0">
-          <p className="max-w-[70ch] text-lg leading-relaxed">
-            {profile.summary}
-          </p>
-
+          <Capabilities />
           <Toolkit />
           <Experience />
         </main>

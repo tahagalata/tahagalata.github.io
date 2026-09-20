@@ -4,7 +4,7 @@ import { Mark, isWordmark } from "./Mark";
 /** Sits directly under the summary: the fastest answer to "what do you use?". */
 export function Toolkit() {
   return (
-    <section aria-labelledby="toolkit-heading" className="mt-14">
+    <section aria-labelledby="toolkit-heading" className="mt-16">
       <h2 id="toolkit-heading" className="sr-only">
         Platforms and tools
       </h2>
