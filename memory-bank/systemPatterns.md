@@ -15,7 +15,7 @@ components/          Identity, Capabilities, Glyph, Toolkit, Mark,
                      Experience, Edge, SideSections
 content/cv.ts        all copy, as typed data
 content/marks.ts     brand mark path data
-public/              photo.png, og.png, CNAME, .nojekyll
+public/              photo.png, og-v2.png, CNAME, .nojekyll
 ```
 
 Layout: left rail (Identity, then SideSections = education, languages, clients) + main column (Capabilities, Toolkit, Experience), footer full width below.
