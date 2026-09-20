@@ -1,33 +1,31 @@
 # Progress
 
 ## Current Status
-Site built and building clean as a static export (2026-09-20). Not yet deployed — no GitHub remote exists.
+**Live at https://tahagalata.com** since 2026-09-20 — GitHub Pages, custom apex domain, HTTPS enforced, `www` redirecting to the apex.
 
 ## What Works
-- CV content extracted to `cvContent.md`; all content questions resolved.
-- Next.js 16 + React 19 + Tailwind 4 scaffold, `output: "export"`, typechecks and builds clean.
-- Full page: left rail (identity, education, languages, clients) + main column (capabilities, toolkit with brand marks, lineage graph), full-width footer.
-- Light and dark schemes both verified by screenshot; mobile (390px) verified.
-- Deploy workflow at `.github/workflows/deploy.yml`.
-- Custom domain wired: `public/CNAME`, canonical + OG URL, `robots.txt`, `sitemap.xml` all emit `tahagalata.com`.
-- Favicon, apple touch icon and a 1200x630 Open Graph card, all verified in the export.
+- Next.js 16 / React 19 / Tailwind 4 static export; typechecks and builds clean.
+- Left rail (identity, education, languages, clients) + main column (capabilities, toolkit, experience lineage graph) + full-width footer.
+- Light and dark schemes and 390px mobile, all verified by screenshot.
+- Brand marks for SAP, AWS, Python and friends, plus NovaDSA, NTT DATA and BSH, all monochrome and scheme-aware.
+- SEO and sharing: canonical URL, `robots.txt`, `sitemap.xml`, TG favicon, apple touch icon, 2400x1260 Open Graph card.
+- Deploy: push `main` → Action → Pages.
 
 ## What's Left
-- [ ] Create the GitHub repo (`tahagalata.github.io`) and push; enable Pages with Source: GitHub Actions
-- [ ] Configure `tahagalata.com` DNS, set the custom domain in repo settings, enforce HTTPS
-- [ ] Keyboard + screen-reader pass on real hardware
-- [ ] Verify the deployed site once live
+- [ ] Force a LinkedIn re-scrape so the cached blurry social card is replaced
+- [ ] Keyboard and screen-reader pass on real hardware
+- [ ] Optional: a clean NovaDSA vector to replace the auto-trace
 
 ## Known Issues
-- No GitHub remote yet, so nothing is deployed; `tahagalata.com` DNS not configured.
-- Photo is 431x442 — fine at its current size, too small for a large portrait.
-- `pdftotext`/`pdftoppm` unavailable locally; `pypdf` (pip, user env) was used instead. Re-extraction isn't needed — use `cvContent.md`.
+- The NovaDSA logo is a VTracer auto-trace — approximated curves and stray artefact paths. Acceptable at its rendered size.
+- Photo is 431x442; too small for a large portrait.
+- Local git holds a `backup-before-scrub` tag pointing at pre-scrub history containing the phone number. It is local-only and never pushed; delete once confident.
 
 ## Decision History
-- **2026-09-20** — Next.js over Astro/plain HTML: SEO + easy content edits + room to grow, at the cost of a build step.
-- **2026-09-20** — GitHub Pages over Vercel: free, matches the `tahagalata` user-site repo name.
-- **2026-09-20** — Custom apex domain `tahagalata.com` rather than `tahagalata.github.io`; the contact address is on the same domain.
-- **2026-09-20** — Scope held to CV/portfolio; blog and case studies explicitly deferred.
-- **2026-09-20** — Phone number excluded from the site (public page is a different exposure than a PDF sent to a named recruiter); photo included.
-- **2026-09-20** — Visual direction: lineage/dataflow graph, chosen over a ledger-table and a schematic-Gantt treatment.
-- **2026-09-20** — No PDF shipped or linked at all; the page is the only artifact. `CV Resume.pdf` stays a local content source.
+- **Stack** — Next.js over Astro and plain HTML: SEO, easy content edits, room to grow, at the cost of a build step.
+- **Hosting** — GitHub Pages over Vercel; custom apex `tahagalata.com`, matching the contact address.
+- **Scope** — CV only; blog and case studies deferred.
+- **Privacy** — phone excluded from site *and* repo (a public page and a public repo are both different from a PDF mailed to a named recruiter); no PDF shipped at all; git history scrubbed before the first push.
+- **Visual** — lineage/dataflow graph, chosen over a ledger-table and a schematic-Gantt treatment.
+- **Content** — the CV's summary paragraph replaced by a lede plus four capability points; clients shown as typographic names, never borrowed logos, to avoid implying endorsement.
+- **Photo** — full colour kept; grayscale tried and rejected by the user.

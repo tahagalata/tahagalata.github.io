@@ -1,35 +1,29 @@
 # Active Context
 
 ## Current Focus
-Site is built (2026-09-20) and builds clean as a static export. Next move is creating the GitHub repo and deploying.
+**The site is live at https://tahagalata.com** (2026-09-20), HTTPS enforced, served by GitHub Pages. The build-and-launch phase is done. Remaining work is polish and verification, not construction.
 
-## Recent Changes
-- Moved Education, Languages and Delivered for into the left rail (user request); footer promoted to page level so mobile order stays sane.
-- **Redesign after user feedback** (too text-heavy, skills buried at the bottom, desktop side gutters too wide): widened to a two-column layout with a sticky identity rail, moved the toolkit to the top with brand marks, added a "Delivered for" wordmark strip.
-- AWS mark supplied by the user and in place; all toolkit panels now carry a real mark.
-- Scaffolded Next.js 16 / React 19 / Tailwind 4, wrote all sections, verified light + dark + mobile by screenshot.
-- `CV Resume.pdf` git-ignored: a public repo would have published the phone number the site deliberately omits.
-
-## Decisions Made (2026-09-20, confirmed by user)
-- **Stack:** Next.js (App Router) + TypeScript + Tailwind, static export.
-- **Hosting:** GitHub Pages at **tahagalata.com** (custom apex domain).
-- **Purpose:** Online CV / portfolio only — no blog, no consulting landing, no project case studies.
-- **Contact:** `contact@tahagalata.com` + `https://linkedin.com/in/tahagalata`. Phone deliberately omitted; the CV's gmail is deliberately not used.
-- **Photo:** included, `photo.png`.
-- **No PDF on the site** — not in `public/`, not linked. The page is the only artifact.
-- **Visual direction:** Lineage / dataflow graph. Full token system in `designContext.md`.
+## Settled Decisions (all confirmed by the user, 2026-09-20)
+- **Stack:** Next.js + TypeScript + Tailwind, static export → GitHub Pages at the `tahagalata.com` apex.
+- **Purpose:** online CV only. No blog, case studies, or consulting landing.
+- **Contact:** `contact@tahagalata.com` (mailbox confirmed live) + `linkedin.com/in/tahagalata`. **Phone never published.** The CV's personal gmail is not used on the site.
+- **No PDF** shipped or linked anywhere; the page is the only artifact.
+- **Photo:** included, full colour, square with a hairline. Grayscale was tried and rejected — do not desaturate again.
+- **Visual direction:** lineage / dataflow graph. Tokens and rules in `designContext.md`.
 
 ## Next Steps
-1. Create the `tahagalata.github.io` repo, push, enable Pages (Source: GitHub Actions).
-2. Point `tahagalata.com` DNS at Pages (see README), set the custom domain in repo settings, enforce HTTPS.
-3. Favicon + Open Graph image.
-4. Verify the live site, then keyboard/screen-reader pass.
+1. Re-run LinkedIn's Post Inspector after the latest push — the 2x social card needs a forced re-scrape to replace the cached blurry one.
+2. Keyboard and screen-reader pass on real hardware (never done; only static screenshots so far).
+3. Optional: replace the NovaDSA logo if a clean vector becomes available (current one is an auto-trace).
 
 ## Patterns & Preferences
-- The user's working directory is named `tahagalata` — suggests the repo is intended as the GitHub user site (`tahagalata.github.io`), which avoids `basePath` complications.
-- CLAUDE.md demands the memory bank be read in full every session and kept terse — compact these files when editing rather than appending.
+- **The user has a sharp eye and reverses course when something is wrong** — grayscale photo reverted, "Where the current work came from" simplified to "Experience", capabilities section replaced a paragraph. Propose, show, and expect revision; don't defend a choice past one round.
+- **They edit `content/cv.ts` directly and commit.** Always check `git log` before assuming the content is as you left it. They removed an invented phrase this way.
+- **Show, don't describe, for visual decisions.** Rendering comparison variants (photo treatments, favicon sizes) resolved questions that prose could not.
+- CLAUDE.md requires reading the whole memory bank each session and keeping it terse — compact when editing, don't just append.
 
 ## Insights
-- The CV is enterprise-SAP-heavy with a recent AWS pivot (Vakko data lake, SageMaker). The site should make that trajectory legible — it's the most interesting thing about the profile and bullets alone bury it.
-- Photo is only 431x442, so it works as a circular avatar up to ~200px displayed (retina) but will look soft as a large hero image. Design around that; ask for a higher-res original if a big portrait is ever wanted.
-- The 2020 freelance web design role is off-narrative for a data analytics CV but worth keeping; it quietly explains why the site exists and is well built.
+- The CV's real story is enterprise SAP pivoting into AWS data engineering. The lineage graph and the accent-coloured terminal edge exist to make that legible; bullets buried it.
+- **Verification by screenshot is not optional here.** Three separate bugs built cleanly and rendered wrong: the flattened `@theme` (no light mode at all), `var()` in SVG attributes (every connector invisible), and the animation resting hidden.
+- The photo is 431x442 — fine at its current size, too small for anything larger. A higher-res original would be needed for a big portrait or a photo-based social card.
+- The 2020 freelance web work is off-narrative for a data CV but earns its place: it is rendered as an explicit lineage break, and it quietly explains why this site is well built.

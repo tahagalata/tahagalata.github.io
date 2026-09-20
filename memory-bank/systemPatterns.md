@@ -1,27 +1,38 @@
 # System Patterns
 
 ## Architecture
-Static site. One Next.js route (`app/page.tsx`) composed of section components. No client-side routing, no data fetching, no state beyond trivial UI (e.g. mobile nav toggle).
+Static site. One route (`app/page.tsx`) composing leaf sections. No client components, no data fetching, no state.
 
 ```
-app/layout.tsx      fonts, metadata, <html> shell
-app/page.tsx        composes sections in order
-components/         Hero, Experience, Skills, Education, Languages, Contact
-content/cv.ts       all CV data as typed constants
-public/             photo.png, favicon, .nojekyll   (no PDF)
+app/layout.tsx       fonts, metadata (canonical, OG, Twitter), <html> shell
+app/page.tsx         the only composer: two-column grid
+app/globals.css      colour tokens, .mono, the edge-draw animation
+app/robots.ts        force-static
+app/sitemap.ts       force-static
+app/icon.png         96px TG monogram  (Next file convention)
+app/apple-icon.png   180px                        "
+components/          Identity, Capabilities, Glyph, Toolkit, Mark,
+                     Experience, Edge, SideSections
+content/cv.ts        all copy, as typed data
+content/marks.ts     brand mark path data
+public/              photo.png, og.png, CNAME, .nojekyll
 ```
+
+Layout: left rail (Identity, then SideSections = education, languages, clients) + main column (Capabilities, Toolkit, Experience), footer full width below.
 
 ## Key Decisions
-- **Content lives in `content/cv.ts`, not in JSX.** Typed objects/arrays; components render them. Editing a job bullet means editing one data file, not hunting through markup. (No CMS/markdown — the content is small and changes rarely.)
-- **Server Components by default.** `'use client'` only where an interaction demands it.
-- **Semantic HTML first.** `<section>`, `<h2>`, `<time>`, `<ul>` — core content readable with CSS/JS disabled; this is also what makes it SEO- and screenreader-friendly for free.
-- **Photo ships as a static asset** in `public/`, rendered at a fixed small size (circular avatar, <=200px displayed) — it is 431x442 and will not survive being blown up.
-- **Design tokens in Tailwind config**, not scattered hex values, so a palette change is one edit.
-- **Dark mode via `prefers-color-scheme`** if implemented — no toggle, no persistence, no hydration mismatch.
+- **Content lives in `content/cv.ts`, not in JSX.** Components render it; they hold no copy. One data file to edit.
+- **Server components throughout.** No `'use client'` anywhere.
+- **Semantic HTML first** — `<section>`, `<h2>`, `<time>`, `<ol>`. Core content readable with CSS and JS off, which buys SEO and screen-reader support for free.
+- **Colour tokens are raw `--c-*` properties on `:root`**, redefined in a dark media query, mapped into Tailwind via `@theme inline`. Not in a Tailwind config — see the Tailwind v4 gotcha in `techContext.md`.
+- **Dark mode via `prefers-color-scheme`.** No toggle, no persistence, no hydration mismatch.
+- **Brand marks are inline SVG in `currentColor`**, so they follow the scheme. `tone: "surface"` paths paint the card background for logos with baked-in counters.
+- **DOM order is identity → main → aside** so mobile stacking keeps the argument ahead of the supporting detail. The footer sits at page level for the same reason.
 
 ## Component Relationships
-`page.tsx` is the only composer; sections are leaf components that take props from `content/cv.ts`. Sections never import each other. No global state, no context.
+`page.tsx` composes; sections are leaves reading from `content/cv.ts`. Sections never import each other. `Mark` and `Glyph` are the only shared leaves. No global state, no context.
 
 ## Critical Paths
-- **Content accuracy**: `CV Resume.pdf` → `memory-bank/cvContent.md` (verbatim extract) → `content/cv.ts`. Any content change starts at the CV, never at the component.
-- **Deploy**: push `main` → GH Action runs `next build` → uploads `out/` → Pages. A broken static export breaks the deploy silently-ish; check the Action, not just localhost.
+- **Content accuracy**: `CV Resume.pdf` → `memory-bank/cvContent.md` (verbatim) → `content/cv.ts`. Changes start at the CV, never at a component.
+- **Deploy**: push `main` → Action runs `next build` → uploads `out/` → Pages → `tahagalata.com`. Check the Actions tab, not just localhost.
+- **Verification**: this project is verified by screenshot, in both colour schemes and at 390px. Building clean has repeatedly not meant rendering correctly — see the invisible-SVG and flattened-`@theme` bugs.

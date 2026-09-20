@@ -13,8 +13,9 @@ Primary: technical recruiters and hiring managers in data analytics / SAP consul
 Secondary: potential clients, professional peers.
 
 ## How It Should Work
-- Land → name, title, one-line positioning, contact affordances, all above the fold.
-- Scroll → experience in reverse-chronological order, then skills, education, languages.
+- Land → name, title, contact in the left rail; a one-line lede and four capability points in the main column, all above the fold.
+- Then → the toolkit (what he uses), then experience newest-first as a lineage graph.
+- The left rail carries education, languages and clients: supporting detail, always in view on desktop, after the argument on mobile.
 - Contact is never more than one click away (email, LinkedIn). Phone is not published.
 
 ## Experience Goals
