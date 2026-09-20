@@ -60,7 +60,7 @@ Cream/terracotta palette; all-caps tracked eyebrow labels; `A · B · C` middle-
 - Social platforms cache scraped previews hard, so the card must exist before the URL is shared anywhere.
 
 ## Brand Marks
-- **Employer marks** (NovaDSA, NTT DATA, BSH) supplied by the user. In each experience node the order is mark, then position, then company name — the company is always spelled out, even where the logo repeats it. Dates stay baseline-aligned with the position line, which is why the mark sits above the header row rather than inside it.
+- **Employer marks** (NovaDSA, NTT DATA, BSH) supplied by the user. In each experience node the order is mark, then position. **Where a logo is shown the company name is not repeated as text** (user's call, 2026-09-20); it stays in the DOM as `sr-only` for screen readers and search engines. A sub-note such as NTT DATA's "BSH Data Analytics" still shows, since the logo does not carry it. Roles without a mark keep their company as visible text. Dates stay baseline-aligned with the position line, which is why the mark sits above the header row rather than inside it.
 - The NovaDSA file is a **VTracer auto-trace**: 26 paths, 21 colours, no viewBox, a full-canvas white backing plate and letter counters baked in as opaque white shapes. It is handled by dropping the plate, tightening the viewBox to the measured content bounds (`87 164 406 72`), and mapping light fills to `tone: "surface"` so the counters follow the colour scheme instead of glowing white on a dark card. If a clean vector ever arrives from NovaDSA, replace it.
 - NTT DATA's circular mark needs its `fill-rule="evenodd"` preserved or the cutouts fill in.
 - Content bounds were measured with `getBBox` in headless Chrome, not eyeballed.

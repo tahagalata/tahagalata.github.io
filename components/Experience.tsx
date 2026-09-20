@@ -59,10 +59,27 @@ export function Experience() {
                     <h3 className="text-base font-medium tracking-tight sm:text-lg">
                       {role.role}
                     </h3>
-                    <p className="mt-0.5 text-sm text-muted">
-                      {role.org}
+                    {/*
+                      Where a logo is shown it carries the company, so the name
+                      is not repeated as text — but it stays in the document for
+                      screen readers and search engines.
+                    */}
+                    <p
+                      className={
+                        !role.mark || role.orgNote
+                          ? "mt-0.5 text-sm text-muted"
+                          : "sr-only"
+                      }
+                    >
+                      <span className={role.mark ? "sr-only" : undefined}>
+                        {role.org}
+                      </span>
                       {role.orgNote ? (
-                        <span className="text-edge"> / {role.orgNote}</span>
+                        role.mark ? (
+                          role.orgNote
+                        ) : (
+                          <span className="text-edge"> / {role.orgNote}</span>
+                        )
                       ) : null}
                     </p>
                   </div>
