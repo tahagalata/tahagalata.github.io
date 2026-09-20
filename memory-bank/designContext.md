@@ -48,7 +48,7 @@ Motion:
 Cream/terracotta palette; all-caps tracked eyebrow labels; `A · B · C` middle-dot meta strings; `→` appended to link text; identical rounded cards with soft grey shadows; gradient washes; accenting one word of a headline.
 
 ## Brand Marks
-- **Employer marks** (NovaDSA, NTT DATA, BSH) supplied by the user and shown in the experience node headers. Where a mark spells the org name exactly and there is no extra note, the text is `sr-only` — the logo is the label.
+- **Employer marks** (NovaDSA, NTT DATA, BSH) supplied by the user. In each experience node the order is mark, then position, then company name — the company is always spelled out, even where the logo repeats it. Dates stay baseline-aligned with the position line, which is why the mark sits above the header row rather than inside it.
 - The NovaDSA file is a **VTracer auto-trace**: 26 paths, 21 colours, no viewBox, a full-canvas white backing plate and letter counters baked in as opaque white shapes. It is handled by dropping the plate, tightening the viewBox to the measured content bounds (`87 164 406 72`), and mapping light fills to `tone: "surface"` so the counters follow the colour scheme instead of glowing white on a dark card. If a clean vector ever arrives from NovaDSA, replace it.
 - NTT DATA's circular mark needs its `fill-rule="evenodd"` preserved or the cutouts fill in.
 - Content bounds were measured with `getBBox` in headless Chrome, not eyeballed.
