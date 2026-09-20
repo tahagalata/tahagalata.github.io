@@ -12,8 +12,9 @@
 - **Visual direction:** lineage / dataflow graph. Tokens and rules in `designContext.md`.
 
 ## Next Steps
-1. Keyboard and screen-reader pass on real hardware (never done; only static screenshots so far).
-2. Optional: replace the NovaDSA logo if a clean vector becomes available (current one is an auto-trace).
+1. Optional: replace the NovaDSA logo if a clean vector becomes available (current one is an auto-trace).
+
+Nothing else is outstanding. The a11y pass is done and passed on hardware (VoiceOver/Safari, 2026-09-20).
 
 ## Patterns & Preferences
 - **The user has a sharp eye and reverses course when something is wrong** — grayscale photo reverted, "Where the current work came from" simplified to "Experience", capabilities section replaced a paragraph. Propose, show, and expect revision; don't defend a choice past one round.

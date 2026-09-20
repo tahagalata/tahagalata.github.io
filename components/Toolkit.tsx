@@ -31,7 +31,7 @@ export function Toolkit() {
               {group.blurb}
             </p>
 
-            <ul className="mt-4 flex flex-wrap gap-1.5">
+            <ul role="list" className="mt-4 flex flex-wrap gap-1.5">
               {group.items.map((item) => (
                 <li
                   key={item}

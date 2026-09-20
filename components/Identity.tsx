@@ -23,7 +23,7 @@ export function Identity() {
         </div>
       </div>
 
-      <ul className="mt-6 space-y-2 text-sm lg:mt-8 lg:border-t lg:border-hairline lg:pt-6">
+      <ul role="list" className="mt-6 space-y-2 text-sm lg:mt-8 lg:border-t lg:border-hairline lg:pt-6">
         <li>
           <a
             href={`mailto:${profile.email}`}

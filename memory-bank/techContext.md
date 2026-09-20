@@ -22,7 +22,7 @@ Rejected: Astro (less familiar tooling), plain HTML (harder to extend), Vercel (
 - `.nojekyll` in `public/` so Jekyll doesn't strip `_next/`.
 
 ## Repo Hygiene
-- **Public repo**, so nothing tracked may carry the phone number or personal addresses. History was scrubbed with `filter-branch` before the first push (2026-09-20); `cvContent.md` and `content/cv.ts` both held them.
+- **Public repo**, so nothing tracked may carry the phone number or personal addresses. History was scrubbed with `filter-branch` before the first push (2026-09-20); `cvContent.md` and `content/cv.ts` both held them. The `backup-before-scrub` tag holding the 18 pre-scrub commits was deleted and gc'd on 2026-09-20 — no ref, object or working file carries the number now, and the pre-scrub history is unrecoverable.
 - `CV Resume.pdf` is git-ignored.
 - Commit author email is the user's personal gmail, **by their explicit choice** — do not "fix" it.
 
@@ -31,10 +31,11 @@ Rejected: Astro (less familiar tooling), plain HTML (harder to extend), Vercel (
 - **`var()` is not substituted in SVG presentation attributes.** `stroke="var(--x)"` renders nothing; use `stroke-*` utilities or a style attribute.
 - Edge animations rest **drawn** and animate *from* hidden, so a failed animation never erases the graph.
 - An SVG favicon cannot load a web font, which is why the icons are PNG.
+- **Safari drops list semantics when `list-style: none` is set**, which Tailwind's preflight applies to every `ol`/`ul` globally. VoiceOver then never announces "list, N items" and ignores an `aria-label` on the list. Every list therefore carries an explicit `role="list"` — redundant-looking but load-bearing; don't delete it as noise.
 
 ## Dev Setup
 - Node 20+ (local: 26). `npm run dev` on :3000, `npm run build` emits `out/`.
-- Screenshots for verification: the Playwright chromium-headless-shell in `~/Library/Caches/ms-playwright/`, against `python3 -m http.server` in `out/`. Dark mode is tested by copying `out/`, rewriting `@media (prefers-color-scheme:dark)` to `@media screen`, and serving that — Chrome's `--force-dark-mode` is auto-darkening and does *not* trigger the media query.
+- Screenshots for verification: the Playwright chromium-headless-shell in `~/Library/Caches/ms-playwright/`, against `python3 -m http.server` in `out/`. **Always pass `--force-prefers-reduced-motion`** — otherwise the `edge-draw` animation is caught mid-flight (`animation-fill-mode: both` holds the hidden from-state through the delay) and every solid lineage edge screenshots blank. Reduced motion sets `animation: none`, so the edges rest drawn. The live site does the same thing, so a blank-edge screenshot is not evidence of a regression. Dark mode is tested by copying `out/`, rewriting `@media (prefers-color-scheme:dark)` to `@media screen`, and serving that — Chrome's `--force-dark-mode` is auto-darkening and does *not* trigger the media query.
 - `pypdf` (pip, user env) extracted the CV text — not a project dependency. `pdftotext`/`pdftoppm` are unavailable locally.
 
 ## Tooling Notes

@@ -13,7 +13,7 @@ export function Capabilities() {
         {lede}
       </p>
 
-      <ul className="mt-10 grid gap-x-10 gap-y-7 sm:grid-cols-2">
+      <ul role="list" className="mt-10 grid gap-x-10 gap-y-7 sm:grid-cols-2">
         {capabilities.map((item) => (
           <li key={item.title} className="flex gap-3.5">
             <span className="mt-0.5 text-muted">

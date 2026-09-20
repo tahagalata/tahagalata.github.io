@@ -9,6 +9,7 @@ Rules that keep it honest:
 - Edge labels carry what actually propagated forward (e.g. BSH → NTT DATA: "BW/4HANA migration"). Never invent a link that isn't in the CV.
 - The SAP → AWS pivot is the terminal edge at the top of the graph; it gets the accent color. Nothing else does.
 - No numbered markers (01/02/03) — provenance is a graph, not a sequence.
+- The terminal edge renders **outside** the `<ol>`, so the list counts roles only. Inside it, it was either a phantom fifth list item or — as shipped until 2026-09-20 — `aria-hidden`, which silently dropped the SAP→AWS pivot for screen-reader users. Decoration gets `aria-hidden`; this block is content.
 
 ## Tokens
 As implemented in `app/globals.css` (raw `--c-*` on `:root`, mapped via `@theme inline`).

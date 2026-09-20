@@ -21,7 +21,7 @@ export function SideSections() {
         className="border-t border-hairline pt-6"
       >
         <SideHeading id="education-heading">Education</SideHeading>
-        <ul className="mt-4 space-y-4">
+        <ul role="list" className="mt-4 space-y-4">
           {education.map((item) => (
             <li key={item.institution}>
               <p className="text-sm font-medium leading-snug">
@@ -70,7 +70,7 @@ export function SideSections() {
         className="mt-10 border-t border-hairline pt-6"
       >
         <SideHeading id="clients-heading">Delivered for</SideHeading>
-        <ul className="mt-4 space-y-1.5">
+        <ul role="list" className="mt-4 space-y-1.5">
           {clients.map((client) => (
             <li key={client} className="text-sm leading-snug text-muted">
               {client}
