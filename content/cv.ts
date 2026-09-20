@@ -94,19 +94,49 @@ export const trajectory = {
   note: "Enterprise data lake on AWS SageMaker, built on a decade-old SAP reporting estate.",
 };
 
-export const expertise = [
+/**
+ * Platforms and tools. `mark` is a slug in content/marks.ts; a group or item
+ * without one renders as a monogram tile, so the grid stays uniform.
+ */
+export const toolkit = [
   {
     group: "SAP",
-    items: ["SAP BW", "SAP BW/4HANA", "SAP PaPM", "SAP Analytics Cloud", "Native HANA views", "ABAP routines"],
+    mark: "sap",
+    blurb: "Data models, reporting and profitability analysis on the SAP stack.",
+    items: [
+      "SAP BW/4HANA",
+      "SAP PaPM",
+      "SAP Analytics Cloud",
+      "Native HANA views",
+      "ABAP routines",
+    ],
   },
   {
     group: "AWS",
-    items: ["Redshift", "SageMaker", "QuickSight", "Glue", "Athena", "S3"],
+    mark: "aws",
+    blurb: "Data lake and analytics services, currently in production use.",
+    items: ["SageMaker", "Redshift", "QuickSight", "Glue", "Athena", "S3"],
   },
   {
-    group: "Languages & libraries",
-    items: ["SQL", "Python", "NumPy", "pandas", "PySpark"],
+    group: "Data & code",
+    mark: "python",
+    blurb: "Querying, transformation and analysis across both worlds.",
+    items: ["SQL", "Python", "pandas", "NumPy", "PySpark"],
   },
+];
+
+/**
+ * Organisations delivered for, drawn from the work-experience bullets.
+ * Set as a typographic wordmark strip: no borrowed logos, no implied endorsement.
+ */
+export const clients = [
+  "Turkish Airlines",
+  "BSH",
+  "OPET",
+  "Eczacıbaşı VitrA Karo",
+  "Villeroy & Boch",
+  "VitrA Plitka",
+  "Vakko",
 ];
 
 export const education = [

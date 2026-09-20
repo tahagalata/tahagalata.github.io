@@ -4,7 +4,7 @@ export function Background() {
   return (
     <section
       aria-labelledby="background-heading"
-      className="mt-24 grid gap-14 sm:mt-32 sm:grid-cols-2 sm:gap-10"
+      className="mt-24 grid gap-14 sm:mt-28 sm:grid-cols-2 sm:gap-10"
     >
       <h2 id="background-heading" className="sr-only">
         Education and languages

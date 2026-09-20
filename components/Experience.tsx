@@ -9,7 +9,7 @@ export function Experience() {
   const edgeCount = roles.length - 1;
 
   return (
-    <section aria-labelledby="experience-heading" className="mt-24 sm:mt-32">
+    <section aria-labelledby="experience-heading" className="mt-24 sm:mt-28">
       <h2
         id="experience-heading"
         className="text-xl font-medium tracking-tight sm:text-2xl"

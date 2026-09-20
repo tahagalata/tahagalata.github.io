@@ -6,7 +6,7 @@ Site built and building clean as a static export (2026-09-20). Not yet deployed 
 ## What Works
 - CV content extracted to `cvContent.md`; all content questions resolved.
 - Next.js 16 + React 19 + Tailwind 4 scaffold, `output: "export"`, typechecks and builds clean.
-- Full page: hero, lineage graph, expertise, education, languages, footer.
+- Full page: identity rail, summary, toolkit with brand marks, lineage graph, clients strip, education, languages, footer.
 - Light and dark schemes both verified by screenshot; mobile (390px) verified.
 - Deploy workflow at `.github/workflows/deploy.yml`.
 - Custom domain wired: `public/CNAME`, canonical + OG URL, `robots.txt`, `sitemap.xml` all emit `tahagalata.com`.
@@ -14,6 +14,7 @@ Site built and building clean as a static export (2026-09-20). Not yet deployed 
 ## What's Left
 - [ ] Create the GitHub repo (`tahagalata.github.io`) and push; enable Pages with Source: GitHub Actions
 - [ ] Configure `tahagalata.com` DNS, set the custom domain in repo settings, enforce HTTPS
+- [ ] Drop in `aws.svg` (user is supplying) and add its path to `content/marks.ts`
 - [ ] Favicon and an Open Graph image
 - [ ] Keyboard + screen-reader pass on real hardware
 - [ ] Verify the deployed site once live

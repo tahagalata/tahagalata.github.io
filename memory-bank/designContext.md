@@ -28,8 +28,10 @@ Type:
 - **IBM Plex Mono** 400/500 — restricted to genuine machine strings: year ranges, technology tokens, node identifiers. Not used as decorative small-caps labels.
 - Modular scale ~1.25. Body measure under 70ch.
 
-Layout:
-- Single column, left-aligned, max ~72ch for prose; the graph column is wider.
+Layout (revised 2026-09-20 after user feedback: too text-heavy, skills buried, desktop gutters too wide):
+- `max-w-7xl` container; on `lg` a two-column grid — sticky identity rail (~18rem) + main column.
+- **Toolkit sits directly under the summary**, not at the bottom: three panels (SAP / AWS / Data & code), each a brand mark, a one-line blurb and its tools. It is the fastest answer to "what does he use?".
+- Clients render as a typographic wordmark strip ("Delivered for"), chosen over logos: no borrowed marks, no implied endorsement.
 - Nodes are rectangular with a 2px radius — near-square, drafting-like, not the SaaS rounded card.
 - Hairlines and node borders share the `edge` token so the whole page reads as one drawing.
 
@@ -38,6 +40,13 @@ Motion:
 
 ## Avoid (checked against generic-default tells)
 Cream/terracotta palette; all-caps tracked eyebrow labels; `A · B · C` middle-dot meta strings; `→` appended to link text; identical rounded cards with soft grey shadows; gradient washes; accenting one word of a headline.
+
+## Brand Marks
+- Tool marks are inline single-path SVGs in `content/marks.ts`, rendered monochrome in `currentColor` so they sit in the palette instead of fighting it.
+- Held: SAP, Python, pandas, NumPy, Apache Spark, Figma, Webflow, React (from simple-icons; CC0 data, marks remain their owners' trademarks, used nominatively).
+- **Not obtainable openly: AWS and all AWS service icons** (Amazon had them removed), plus NTT DATA, NovaDSA, OPET, Vakko, Villeroy & Boch, Eczacıbaşı. SQL has no mark by nature.
+- A tool with no mark falls back to a **monogram tile** of the same size and weight, so the grid never looks half-finished. AWS is on that fallback until the user supplies `aws.svg`.
+- Decision: one AWS mark, not seven service icons — seven would out-weigh SAP and make the grid noisy.
 
 ## Resolved in-browser
 - Photo sits beside the name in the hero as a square node (2px radius, hairline border), matching the graph's node language; 96px mobile / 112px desktop, the limit its resolution supports.
