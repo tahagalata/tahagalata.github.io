@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/*
+ * Tokens live as raw custom properties so they can be redefined per color
+ * scheme; @theme only maps them into Tailwind's namespace. Tailwind v4 flattens
+ * an @theme block nested in @media, so dark values must NOT be declared there.
+ */
+:root {
+  --c-canvas: #e9edf0;
+  --c-surface: #ffffff;
+  --c-ink: #0e1317;
+  --c-muted: #55626e;
+  --c-edge: #8fa0ae;
+  --c-hairline: #cdd6dd;
+  --c-accent: #00695f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-canvas: #0e1317;
+    --c-surface: #171f27;
+    --c-ink: #e8eef3;
+    --c-muted: #9dabb7;
+    --c-edge: #5b6e7d;
+    --c-hairline: #2a3540;
+    --c-accent: #45c7b5;
+  }
+}
+
+@theme inline {
+  --color-canvas: var(--c-canvas);
+  --color-surface: var(--c-surface);
+  --color-ink: var(--c-ink);
+  --color-muted: var(--c-muted);
+  --color-edge: var(--c-edge);
+  --color-hairline: var(--c-hairline);
+  --color-accent: var(--c-accent);
+
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+html,
+body {
+  background-color: var(--c-canvas);
+  color: var(--c-ink);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Machine strings: years, node identifiers, technology tokens. */
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+/*
+ * The one orchestrated moment: lineage edges draw upward, once, on load.
+ * The resting state is fully drawn and the animation runs *from* hidden, so a
+ * connector is never lost if the animation does not run.
+ */
+@keyframes trace {
+  from {
+    stroke-dashoffset: var(--len);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.edge-draw {
+  stroke-dasharray: var(--len);
+  stroke-dashoffset: 0;
+  animation: trace 620ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: var(--delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edge-draw {
+    animation: none;
+  }
+}
