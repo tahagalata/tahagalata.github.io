@@ -55,6 +55,7 @@ Cream/terracotta palette; all-caps tracked eyebrow labels; `A · B · C` middle-
 - `wordmark: true` marks (SAP, AWS) spell the name themselves, so their text heading is `sr-only` — the logo *is* the heading. "aws AWS" side by side read as a mistake.
 
 ## Resolved in-browser
-- Photo sits beside the name in the hero as a square node (2px radius, hairline border), matching the graph's node language; 96px mobile / 112px desktop, the limit its resolution supports.
+- Photo sits beside the name as a square node (2px radius, hairline border), matching the graph's node language; 96px mobile / 144px desktop, the limit its resolution supports.
+- **Rendered grayscale** (`contrast-[1.06]`). In full colour it was the only saturated element on an otherwise ink/grey/teal page — a street background of trees, sky and parked cars — and read as dropped in rather than designed in. Shape was not the problem: a side-by-side of square, rounded and circle at grayscale showed all three reading as finished. Do not "restore" the colour.
 - The freelance role is rendered as a **lineage break**: dashed edge, dimmed marker, no carried labels. Claiming Figma/Webflow fed the SAP work would have been an invented link.
 - Accent `#00695f` light / `#45c7b5` dark — both clear 4.5:1 on their canvas.

@@ -12,7 +12,7 @@ export function Identity() {
           width={431}
           height={442}
           priority
-          className="size-24 shrink-0 rounded-[2px] border border-hairline object-cover sm:size-28 lg:size-36"
+          className="size-24 shrink-0 rounded-[2px] border border-hairline object-cover grayscale contrast-[1.06] sm:size-28 lg:size-36"
         />
         <div className="pt-1 lg:pt-5">
           <h1 className="text-3xl font-medium tracking-tight sm:text-4xl lg:text-[2rem]">
