@@ -7,8 +7,8 @@ Source of truth for all site copy. Do not paraphrase into the site without check
 - **Title:** Data Analytics Consultant
 
 ## Contact
-- Phone: on the PDF only — never published
-- Email: the personal gmail on the CV  — **superseded for the site**, see Content Rules
+- Phone: on the PDF only — deliberately **not** recorded here, because this repo is public. Never published.
+- Email: the CV's personal gmail is superseded for the site; see Content Rules.
 - LinkedIn: @tahagalata — https://linkedin.com/in/tahagalata (confirmed)
 
 ## Summary
@@ -58,6 +58,6 @@ August 2020 – October 2020
 ## Content Rules (confirmed 2026-09-20)
 - The CV's full summary paragraph is **not** shown on the site; it was compressed into the lede and four capability points in `content/cv.ts`. This file remains the record of the original wording.
 - **Phone number must NOT appear on the site.** Contact = email + LinkedIn.
-- **Site email is `contact@tahagalata.com`**, not the `the personal gmail on the CV` on the CV (set 2026-09-20). This is the one place the site deliberately departs from the PDF. Mailbox confirmed live by the user — don't re-raise it.
+- **Site email is `contact@tahagalata.com`**, not the personal gmail on the CV (set 2026-09-20). This is the one place the site deliberately departs from the PDF. Mailbox confirmed live by the user — don't re-raise it.
 - **Photo is included.** `public/photo.png`, 431x442 portrait.
 - **No PDF anywhere.** `CV Resume.pdf` is a local content source only: not in `public/`, not linked, and git-ignored so it never reaches the repo either (it carries the phone number, and a public repo would publish it). This file is the durable copy of its content.

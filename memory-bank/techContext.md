@@ -18,6 +18,7 @@ Rejected: Astro (less familiar tooling), plain HTML (harder to extend), Vercel (
 ## Repo State
 - Git initialized 2026-09-20. No GitHub remote yet — needed before Pages can deploy.
 - `CV Resume.pdf` is git-ignored (carries the phone number).
+- **The repo is public** (free Pages requires it). Nothing in the memory bank may carry the phone number or personal addresses — redacted 2026-09-20 before the first push.
 
 ## Gotchas Hit
 - **Tailwind v4 flattens `@theme` nested in `@media`** — dark values silently overwrite light ones. Tokens are therefore raw `--c-*` properties on `:root` (redefined in the dark media query) and mapped through `@theme inline`.
