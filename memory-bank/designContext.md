@@ -56,6 +56,7 @@ Cream/terracotta palette; all-caps tracked eyebrow labels; `A · B · C` middle-
 
 ## Resolved in-browser
 - Photo sits beside the name as a square node (2px radius, hairline border), matching the graph's node language; 96px mobile / 144px desktop, the limit its resolution supports.
-- **Rendered grayscale** (`contrast-[1.06]`). In full colour it was the only saturated element on an otherwise ink/grey/teal page — a street background of trees, sky and parked cars — and read as dropped in rather than designed in. Shape was not the problem: a side-by-side of square, rounded and circle at grayscale showed all three reading as finished. Do not "restore" the colour.
+- **Full colour, by the user's decision (2026-09-20).** Grayscale was tried and reverted — the user preferred the photo as shot. Do not desaturate it again without asking.
+- Shape has been settled: a side-by-side of square, rounded and circular crops showed the shape was not what made the photo feel unfinished. Square stays.
 - The freelance role is rendered as a **lineage break**: dashed edge, dimmed marker, no carried labels. Claiming Figma/Webflow fed the SAP work would have been an invented link.
 - Accent `#00695f` light / `#45c7b5` dark — both clear 4.5:1 on their canvas.
