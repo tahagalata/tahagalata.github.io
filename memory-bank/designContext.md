@@ -48,7 +48,9 @@ Motion:
 Cream/terracotta palette; all-caps tracked eyebrow labels; `A · B · C` middle-dot meta strings; `→` appended to link text; identical rounded cards with soft grey shadows; gradient washes; accenting one word of a headline.
 
 ## Icon & Social Card
-- `app/icon.svg` + `app/apple-icon.png` (Next's file conventions, auto-linked): the lineage arrow pointing into a node, white on accent teal. Checked at 16px on light and dark tab strips before shipping.
+- `app/icon.png` (96px) + `app/apple-icon.png` (180px), Next's file conventions, auto-linked: a **TG** monogram, white IBM Plex Sans on the site's dark ink `#0e1317`. Checked at 16px against light, dark and grey tab strips.
+- They are PNGs, not SVG, deliberately: an SVG favicon cannot load a web font, so `<text>` would fall back to whatever generic sans the platform has. Rendering with the real font settles it. Source pages: `scratchpad/icon/tg.html` and `tg180.html`.
+- An earlier lineage-arrow icon on accent teal was replaced at the user's request.
 - `public/og.png`, 1200x630, built from an HTML page in the site's own tokens and screenshotted headlessly (source: `scratchpad/og/index.html` — recreate it if the card ever needs changing). Not the portrait: at 431x442 it cannot fill 1200x630 sharply.
 - Social platforms cache scraped previews hard, so the card must exist before the URL is shared anywhere.
 
