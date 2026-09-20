@@ -4,13 +4,15 @@
 - **Next.js (App Router) + TypeScript** — static export (`output: 'export'`).
 - **Tailwind CSS** for styling.
 - **GitHub Pages** for hosting, deployed via GitHub Actions on push to `main`.
-- Domain: `tahagalata.github.io` initially; custom domain optional later (would need `CNAME` in `public/`).
+- Domain: **tahagalata.com** (decided 2026-09-20). `public/CNAME` carries it so each deploy re-asserts it. Apex A/AAAA records to GitHub's Pages IPs, `www` CNAME to `tahagalata.github.io.`; DNS not yet configured.
 
 Rejected: Astro (less familiar tooling), plain HTML (harder to extend), Vercel (GH Pages preferred).
 
 ## Constraints
 - **No server runtime.** No API routes, no SSR, no `next/image` optimization loader — use `images: { unoptimized: true }`.
-- If served from a project subpath (`/tahagalata`), `basePath` + `assetPrefix` must be set. Serving from `tahagalata.github.io` (user site repo) avoids this — prefer that.
+- Served at a domain apex, so no `basePath`/`assetPrefix` needed.
+- The absolute site URL is repeated in `public/CNAME`, `app/layout.tsx`, `app/robots.ts`, `app/sitemap.ts` — all four move together.
+- Route handlers need `export const dynamic = "force-static"` under `output: "export"`; `robots.ts` and `sitemap.ts` both have it.
 - `.nojekyll` file required in output so `_next/` assets aren't stripped by Jekyll.
 
 ## Repo State

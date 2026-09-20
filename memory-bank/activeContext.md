@@ -9,17 +9,18 @@ Site is built (2026-09-20) and builds clean as a static export. Next move is cre
 
 ## Decisions Made (2026-09-20, confirmed by user)
 - **Stack:** Next.js (App Router) + TypeScript + Tailwind, static export.
-- **Hosting:** GitHub Pages.
+- **Hosting:** GitHub Pages at **tahagalata.com** (custom apex domain).
 - **Purpose:** Online CV / portfolio only — no blog, no consulting landing, no project case studies.
-- **Contact:** email + `https://linkedin.com/in/tahagalata`. Phone is deliberately omitted from the site.
+- **Contact:** `contact@tahagalata.com` + `https://linkedin.com/in/tahagalata`. Phone deliberately omitted; the CV's gmail is deliberately not used.
 - **Photo:** included, `photo.png`.
 - **No PDF on the site** — not in `public/`, not linked. The page is the only artifact.
 - **Visual direction:** Lineage / dataflow graph. Full token system in `designContext.md`.
 
 ## Next Steps
 1. Create the `tahagalata.github.io` repo, push, enable Pages (Source: GitHub Actions).
-2. Favicon + Open Graph image.
-3. Verify the live site, then keyboard/screen-reader pass.
+2. Point `tahagalata.com` DNS at Pages (see README), set the custom domain in repo settings, enforce HTTPS.
+3. Favicon + Open Graph image.
+4. Verify the live site, then keyboard/screen-reader pass.
 
 ## Patterns & Preferences
 - The user's working directory is named `tahagalata` — suggests the repo is intended as the GitHub user site (`tahagalata.github.io`), which avoids `basePath` complications.

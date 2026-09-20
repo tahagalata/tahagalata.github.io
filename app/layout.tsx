@@ -20,12 +20,18 @@ const plexMono = IBM_Plex_Mono({
 const description =
   "Data Analytics Consultant working across SAP BW/4HANA, SAP PaPM and AWS data engineering, from enterprise financial reporting to data lakes on SageMaker.";
 
+const siteUrl = "https://tahagalata.com";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: `${profile.name} — ${profile.title}`,
   description,
+  alternates: { canonical: "/" },
   openGraph: {
     title: `${profile.name} — ${profile.title}`,
     description,
+    url: siteUrl,
+    siteName: profile.name,
     type: "profile",
     locale: "en",
   },
