@@ -51,7 +51,8 @@ Cream/terracotta palette; all-caps tracked eyebrow labels; `A · B · C` middle-
 - `app/icon.png` (96px) + `app/apple-icon.png` (180px), Next's file conventions, auto-linked: a **TG** monogram, white IBM Plex Sans on the site's dark ink `#0e1317`. Checked at 16px against light, dark and grey tab strips.
 - They are PNGs, not SVG, deliberately: an SVG favicon cannot load a web font, so `<text>` would fall back to whatever generic sans the platform has. Rendering with the real font settles it. Source pages: `scratchpad/icon/tg.html` and `tg180.html`.
 - An earlier lineage-arrow icon on accent teal was replaced at the user's request.
-- `public/og.png`, 1200x630, built from an HTML page in the site's own tokens and screenshotted headlessly (source: `scratchpad/og/index.html` — recreate it if the card ever needs changing). Not the portrait: at 431x442 it cannot fill 1200x630 sharply.
+- `public/og.png`, **2400x1260** (2x a 1200x630 layout), built from an HTML page in the site's own tokens and screenshotted headlessly (source: `scratchpad/og/index.html`). Not the portrait: at 431x442 it cannot fill that frame sharply.
+- Rendered at 2x and with a large minimum type size on purpose: platforms re-encode and generate their own smaller variants, and fine detail dissolves first. Test any redesign by downscaling to ~640px wide and back up — if the tags and year labels survive that, they survive LinkedIn.
 - Social platforms cache scraped previews hard, so the card must exist before the URL is shared anywhere.
 
 ## Brand Marks
