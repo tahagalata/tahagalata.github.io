@@ -4,6 +4,7 @@
 Site is built (2026-09-20) and builds clean as a static export. Next move is creating the GitHub repo and deploying.
 
 ## Recent Changes
+- Moved Education, Languages and Delivered for into the left rail (user request); footer promoted to page level so mobile order stays sane.
 - **Redesign after user feedback** (too text-heavy, skills buried at the bottom, desktop side gutters too wide): widened to a two-column layout with a sticky identity rail, moved the toolkit to the top with brand marks, added a "Delivered for" wordmark strip.
 - AWS mark supplied by the user and in place; all toolkit panels now carry a real mark.
 - Scaffolded Next.js 16 / React 19 / Tailwind 4, wrote all sections, verified light + dark + mobile by screenshot.

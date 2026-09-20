@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { profile } from "@/content/cv";
 
-/** The sticky identity rail on desktop; the page header on mobile. */
+/** The identity block: left rail on desktop, page header on mobile. */
 export function Identity() {
   return (
-    <header className="lg:sticky lg:top-16">
+    <header>
       <div className="flex items-start gap-5 lg:block">
         <Image
           src={`/${profile.photo}`}
