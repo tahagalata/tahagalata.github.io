@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=block" rel="stylesheet">
+<style>
+  :root{
+    --canvas:#e9edf0; --surface:#ffffff; --ink:#0e1317;
+    --muted:#55626e; --edge:#8fa0ae; --hairline:#cdd6dd; --accent:#00695f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px}
+  body{
+    background:var(--canvas); color:var(--ink);
+    font-family:"IBM Plex Sans",sans-serif;
+    display:grid; grid-template-columns:1fr auto;
+    align-items:center; gap:64px;
+    padding:0 79px 0 66px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:"IBM Plex Mono",monospace}
+
+  h1{font-size:72px;font-weight:600;letter-spacing:-.022em;line-height:1}
+  .title{margin-top:18px;font-size:30px;font-weight:400;color:var(--muted);letter-spacing:-.005em}
+  hr{border:0;border-top:1px solid var(--hairline);margin:36px 0 30px;width:483px}
+  .tags{display:flex;gap:12px}
+  .tag{
+    background:var(--surface);border:1px solid var(--hairline);border-radius:2px;
+    padding:9px 14px;font-size:16px;font-weight:400;color:var(--muted);
+  }
+  .url{margin-top:54px;font-size:16px;color:var(--muted)}
+
+  .graph{display:flex;flex-direction:column;align-items:stretch;width:312px}
+  .node{
+    background:var(--surface);border:1px solid var(--hairline);border-radius:2px;
+    padding:20px 22px;
+  }
+  .node.present{border-color:var(--accent)}
+  .co{font-size:24px;font-weight:500;line-height:1.1}
+  .yr{margin-top:9px;font-size:16px;color:var(--muted)}
+  .arrow{height:62px;display:flex;align-items:center;justify-content:center}
+</style>
+</head>
+<body>
+  <section>
+    <h1>Taha Galata</h1>
+    <p class="title">Data Analytics Consultant</p>
+    <hr>
+    <div class="tags">
+      <span class="tag mono">SAP BW/4HANA</span>
+      <span class="tag mono">SAP PaPM</span>
+      <span class="tag mono">AWS</span>
+      <span class="tag mono">Python</span>
+    </div>
+    <p class="url mono">tahagalata.com</p>
+  </section>
+
+  <section class="graph">
+    <div class="node present">
+      <div class="co">NovaDSA</div>
+      <div class="yr mono">2024 — Present</div>
+    </div>
+    <div class="arrow">
+      <svg width="13" height="62" viewBox="0 0 13 62" fill="none">
+        <path d="M6.5 62 V4 M1.5 9.5 L6.5 3.5 L11.5 9.5" stroke="#8fa0ae" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="node">
+      <div class="co">NTT DATA</div>
+      <div class="yr mono">2023 — 2024</div>
+    </div>
+    <div class="arrow">
+      <svg width="13" height="62" viewBox="0 0 13 62" fill="none">
+        <path d="M6.5 62 V4 M1.5 9.5 L6.5 3.5 L11.5 9.5" stroke="#8fa0ae" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="node">
+      <div class="co">BSH</div>
+      <div class="yr mono">2022 — 2023</div>
+    </div>
+  </section>
+</body>
+</html>

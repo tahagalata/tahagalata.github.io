@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     locale: "en",
     images: [
       {
-        url: "/og-v2.png",
-        width: 2400,
-        height: 1260,
+        url: "/og-v3.png",
+        width: 1200,
+        height: 630,
         alt: `${profile.name}, ${profile.title}`,
       },
     ],
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${profile.name} — ${profile.title}`,
     description,
-    images: ["/og-v2.png"],
+    images: ["/og-v3.png"],
   },
   robots: { index: true, follow: true },
 };
